@@ -1,6 +1,6 @@
 import os
 import csv
-
+#initialize file paths
 csvpath = os.path.join('PyBank', 'Resources', 'budget_data.csv')
 output = os.path.join('PyBank','analysis','Results.txt')
 # initialize counters

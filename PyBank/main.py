@@ -18,7 +18,6 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
 #begin reading and evaluating each row
-
     for row in csvreader:
         #step up the variables
         months += 1
@@ -39,6 +38,8 @@ with open(csvpath) as csvfile:
         lastchng = value
 
     avgchange = sum(changes)/len(changes) #Calculating average change using list
+
+    #Outputting results to text file and terminal
     outputtext = f"Financial Analyisis \n----------------------- \nTotal Months: {months} \nTotal : ${net} \nAverage Change: ${avgchange} \nGreatest Increase in Profits: {bpdate} (${bigprofit}) \nGreatest Decrease in Profits: {bldate} (${bigloss})"
     print(outputtext)
     with open(output,"w") as file:
